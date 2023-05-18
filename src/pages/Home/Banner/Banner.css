@@ -1,0 +1,73 @@
+ #toy {
+  position: relative;
+  text-align: center;
+}
+
+.description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.banner-image {
+  width: 100%;
+}
+
+.description .banner-text {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+.description .banner-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+.description .banner-subheading {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.description .banner-button {
+  margin-top: 20px;
+}
+
+.banner-button {
+  margin-top: 20px;
+  background-color: #fca311;
+  color: #fff;
+  border-color: #fca311;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.banner-button:hover {
+  background-color: #e09800;
+  border-color: #e09800;
+}
+
+@media only screen and (max-width: 688px) {
+  .description .banner-text {
+    padding: 3px;
+  }
+
+  .description .banner-heading {
+    font-size: 2rem;
+  }
+
+  .description .banner-subheading {
+    font-size: 1.25rem;
+  }
+
+  .description .banner-button {
+    margin-top: 10px;
+    font-size: 1rem;
+    padding: 5px 20px;
+  }
+
+  .banner-image img {
+    height: 700px; 
+  }
+} 

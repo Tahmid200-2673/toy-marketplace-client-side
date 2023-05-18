@@ -1,6 +1,7 @@
 
 import { Navbar, Nav, NavDropdown, Image, Container } from 'react-bootstrap';
 import toy from '../../../assets/toy.jpg'
+
 const NavBar = () => {
     return (
        <Container className='mt-4'>
