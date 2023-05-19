@@ -1,4 +1,4 @@
- import React from 'react';
+
  import { Container, Button } from 'react-bootstrap';
  import img2 from '../../../assets/banner2.jpeg'; 
  import './Banner.css';

@@ -1,0 +1,30 @@
+.support{
+    margin-right: 100px;
+}
+.support-row {
+    margin: 20px -15px;
+  }
+  
+  .support-card {
+    width: 284px;
+    margin-right: 23px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .support-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: grey;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+ 
+  @media only screen and (max-width: 688px){
+    .support-card {
+        width: 300px;
+        margin-bottom: 23px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+  }
