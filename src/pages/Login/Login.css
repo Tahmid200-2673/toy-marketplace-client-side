@@ -1,0 +1,11 @@
+
+.google-btn-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .login-btn {
+    margin-right: 200px;
+    display: flex;
+    justify-content: center;
+  }
+  

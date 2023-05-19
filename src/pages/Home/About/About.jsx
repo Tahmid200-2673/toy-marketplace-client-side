@@ -4,7 +4,7 @@
 import { Button, Container } from 'react-bootstrap';
 
 import './About.css';
-import g1 from '../../../assets/gy12.jpeg';
+import g1 from '../../../assets/gy16.jpg';
 import g2 from '../../../assets/gy11.jpg';
 import g3 from '../../../assets/gy10.jpeg';
 
@@ -16,13 +16,13 @@ const About = () => {
         <div className="gallery-item">
           <img src={g1} alt="Toy Image 1" className="gallery-image" style={{ height: '412px' }}/>
           <div className="gallery-overlay"></div>
-          <h3 className="gallery-item-title">Marvel Toys</h3>
+          <h3 className="gallery-item-title">Transformers Toys</h3>
           <Button variant="primary" className="gallery-item-button mb-5">Shop Now</Button>
         </div>
         <div className="gallery-item">
           <img src={g2} alt="Toy Image 2" className="gallery-image" style={{ height: '412px' }} />
           <div className="gallery-overlay"></div>
-          <h3 className="gallery-item-title">Avengers Toys</h3>
+          <h3 className="gallery-item-title">Marvel Toys</h3>
           <Button variant="primary" className="gallery-item-button mb-5">Shop Now</Button>
         </div>
         <div className="gallery-item">
