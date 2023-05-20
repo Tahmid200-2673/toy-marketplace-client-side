@@ -1,11 +1,13 @@
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Button, Card, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const SignUp = () => {
-    const { createUser } = useContext(AuthContext);
+  const [err, setErr] = useState('');
+    const [result, setResult] = useState('');
+    const { fnCreateUser } = useContext(AuthContext);
     const fnSignUp = event => {
       
         event.preventDefault();
@@ -17,13 +19,22 @@ const SignUp = () => {
 
         console.log(name, photo, email, password)
 
+        if (password.length < 6) {
+          setErr(' Add at least 6 characters in your password')
+          return;
+      }
 
-        createUser(email, password)
+
+        fnCreateUser(email, password)
         .then(result => {
             const user = result.user;
             console.log(user)
+            setErr('');
+            event.target.reset();
+            setResult('User created successfully');
         })
         .catch(error => console.log(error))
+        setErr(err.message);
 
 
         
@@ -64,6 +75,12 @@ const SignUp = () => {
         Already Have an Account? <Link to="/login">Login</Link>
       </Form.Text>
      </div>
+     <Form.Text className="text-success " >
+            {result}
+            </Form.Text>
+            <Form.Text className="text-danger">
+            {err}
+            </Form.Text>
           </Form>
         </Card.Body>
       </Card>

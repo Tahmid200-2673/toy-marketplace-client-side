@@ -1,14 +1,21 @@
 
 import { Button, Card, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {  FaGoogle } from 'react-icons/fa';
 import './Login.css'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+      const [err, setErr] = useState('');
+      const [result, setResult] = useState('');
+    const { fnSignIn , fnGoogleSignIn } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
+
     const fnLogin = event => {
       
         event.preventDefault();
@@ -16,17 +23,33 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, email, password)
-        signIn(email, password)
+        fnSignIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setErr('');
+                event.target.reset();
+                setResult('Login successful');
+                navigate(from, { replace: true })
             })
             .catch(error => console.log(error));
+            setErr(err.message);
 
         
 
        
     }
+
+    const fnGoogle = () => {
+      fnGoogleSignIn()
+      .then(result => {
+          const loggedUser = result.user;
+          console.log(loggedUser);
+      })
+      .catch(error => {
+          console.log(error)
+      })
+  } 
     return (
         <Container className="d-flex align-items-center justify-content-center vh-100">
       <Card className="w-50">
@@ -50,19 +73,22 @@ const Login = () => {
           </div>
           <br />
           <div className="text-center">
-          <Form.Text className="text-secondary mt-3 mx-5">
+          <Form.Text className="text-secondary mt-3 mx-5 ">
               New to our platform? <Link to="/signup">Register</Link>
           </Form.Text>
          </div>
+        
 
-            <Form.Text className="text-right mt-5">
+             <Form.Text className="text-right mt-5">
               <div className="google-btn-wrapper">
-                <button className="google-btn btn btn-warning rounded-circle mx-5">
+                <button onClick={fnGoogle} className="google-btn btn btn-warning rounded-circle mx-5">
                   <FaGoogle />
                 </button>
               </div>
               <h5 className="mx-5 text-center">Sign-in with Google</h5>
-            </Form.Text>
+            </Form.Text> 
+            <h5 className='text-danger'>{err}</h5>
+           <h5 className='text-success'>{result}</h5>
           </Form>
         </Card.Body>
       </Card>

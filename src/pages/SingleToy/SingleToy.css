@@ -1,0 +1,40 @@
+.banner-details {
+    margin-left: 120rem;
+  }
+   
+  .toy-details {
+    display: flex;
+     align-items: center; 
+  }
+  
+  .toy-image img {
+    width: 300px;
+    height: auto;
+    /* margin-right: 20px; */
+  }
+  .toy-info{
+    margin-right: 50px;
+  }
+  .toy-info-texts{
+    margin-top: 150rem;
+  } 
+  
+  .toy-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .seller-info {
+    margin-bottom: 10px;
+  }
+  
+  .price,
+  .rating,
+  .quantity {
+    margin-bottom: 5px;
+  }
+  
+  .descriptionTwo {
+    /* white-space: pre-line; */
+    /* margin-left: -185px; */
+  }

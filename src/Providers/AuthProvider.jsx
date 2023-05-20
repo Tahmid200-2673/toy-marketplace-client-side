@@ -10,23 +10,23 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
 
-    const createUser = (email, password) => {
+    const fnCreateUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
-    const signIn = (email, password) => {
+    const fnSignIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const googleSignIn = () => {
+    const fnGoogleSignIn = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
 
 
-    const logOut = () => {
+    const fnLogOut = () => {
         setLoading(true);
         return signOut(auth);
     }
@@ -47,10 +47,10 @@ const AuthProvider = ({ children }) => {
     const authInfo = {
         user,
         loading,
-        createUser, 
-        signIn,
-        googleSignIn,
-        logOut
+        fnCreateUser, 
+        fnSignIn,
+        fnGoogleSignIn,
+        fnLogOut
        
     }
 

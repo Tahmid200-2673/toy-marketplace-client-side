@@ -92,13 +92,15 @@
     text-align: center;
   }
   
-  .gallery-heading {
+   .gallery-heading {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 30px;
     color: #fca311;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
+  } 
+
+ 
   
   .gallery {
     display: grid;
@@ -133,7 +135,7 @@
     text-transform: uppercase;
   }
   
-  .gallery-item-button {
+  /* .gallery-item-button {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #007bff;
@@ -144,6 +146,38 @@
   
   .gallery-item-button:hover {
     background-color: #0056b3;
+  } */
+
+  /* .gallery-item-button {
+    
+    background-color: #ff5722;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  .gallery-item-button:hover {
+    background-color: #d32f2f;
+  }
+   */
+
+   .gallery-item-button {
+    background-color: #ff5722; /* Change the background color to your desired color */
+    color: #fff; /* Change the text color to your desired color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .gallery-item-button:hover {
+    background-color: #e64a19; /* Change the background color on hover */
   }
   
   

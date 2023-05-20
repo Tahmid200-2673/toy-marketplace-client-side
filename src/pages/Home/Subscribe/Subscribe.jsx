@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Button, Card, Form } from 'react-bootstrap';
+import './Subscribe.css';
 
 const Subscribe = () => {
     return (
