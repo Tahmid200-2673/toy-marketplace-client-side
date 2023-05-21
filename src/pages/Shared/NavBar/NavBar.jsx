@@ -35,7 +35,7 @@ const NavBar = () => {
       case '/addtoy':
         pageTitle = 'Add a Toy';
         break;
-      case '/blogs':
+      case '/blog':
         pageTitle = 'Blogs';
         break;
       default:

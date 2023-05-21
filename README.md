@@ -7,7 +7,9 @@ Features:
 
 • In All Toys Route in navbar you will see the all toys by users 
 
-• In My Toys Route you will see your added toys and also you can update and delete your existing toys
+• In My Toys Route in navbar you will see your added toys and also you can update and delete your existing toys
+
+• In Add a Toys Route in navbar you will be able to add toys by category
 
 • In Blog Route you will see all the given question and answers
 
@@ -17,6 +19,6 @@ Features:
 
 
 
-live site : 
+live site : https://toy-marketplace-4b1ae.web.app
 
 
