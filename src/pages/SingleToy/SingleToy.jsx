@@ -1,5 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import './SingleToy.css'
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 
 const SingleToy = () => {
@@ -18,14 +20,25 @@ const SingleToy = () => {
           <div className="toy-info-texts mt-5 position-absolute top-50 start-50">
           <h2 className="toy-name">Toy Name: {name}</h2>
            <div className="seller-info fs-5">
-            <p>Seller: {sellerName || 'N/A'}</p>
-            <p>Seller Email: {email}</p>
+            <h6>Seller: {sellerName || 'N/A'}</h6>
+            <h6>Seller Email: {email}</h6>
           </div> 
           
-          <p className="price">Price: ${price}</p>
-          <p className="rating">Rating: {rating}</p>
-          <p className="quantity">Available Quantity: {quantity}</p>
-          <p className="descriptionTwo">Description : {description}</p>
+          
+          <br />
+        
+          <Rating
+                        placeholderRating={toy.rating}
+                        readonly
+                        emptySymbol={<FaRegStar></FaRegStar>}
+                        placeholderSymbol={<FaStar className='text-warning'></FaStar>}
+                        fullSymbol={<FaStar></FaStar>}
+                    ></Rating>
+           <h6 className="rating">Rating: {rating}</h6>
+          <br />
+          <h6 className="price">Price: ${price}</h6>
+          <h6 className="quantity">Available Quantity: {quantity}</h6>
+          <h6 className="descriptionTwo">Description : {description}</h6>
           </div>
         </div>
       </div>

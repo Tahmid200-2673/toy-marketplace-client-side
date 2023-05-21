@@ -43,6 +43,17 @@ const AllToys = () => {
     const handleSearch = (e) => {
         setSearchTerm(e.target.value);
     };
+
+    const handleViewDetails = () => {
+        if (!user) {
+          alert('You have to log in first to view details', {
+           
+          });
+        } 
+      };
+
+
+
     return (
         <div>
            
@@ -76,7 +87,7 @@ const AllToys = () => {
                             <td>${toy.price}</td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{toy.quantity}</td>
                             <td>
-                            <Link to={`/toys/${toy._id}`}><button className="btn btn-primary view-details-btn">View Details</button></Link>
+                            <Link to={`/toys/${toy._id}`}><button className="btn btn-primary view-details-btn" onClick={handleViewDetails}>View Details</button></Link>
                             </td>
                         </tr>
                     ))}

@@ -32,8 +32,13 @@ const Login = () => {
                 setResult('Login successful');
                 navigate(from, { replace: true })
             })
-            .catch(error => console.log(error));
-            setErr(err.message);
+            // .catch(error => console.log(error);
+            // setErr(error.message);
+            // );
+            .catch(error => {
+              console.log(error);
+              setErr(error.message);
+            });
 
         
 
@@ -72,6 +77,8 @@ const Login = () => {
            Login
               </Button>
           </div>
+          {err && <h5 className="text-danger text-center">{err}</h5>}
+          {result && <h5 className="text-success text-center">{result}</h5>}
           <br />
           <div className="text-center">
           <Form.Text className="text-secondary mt-3 mx-5 ">
@@ -80,7 +87,7 @@ const Login = () => {
          </div>
         
 
-             <Form.Text className="text-right mt-5">
+              <Form.Text className="text-right mt-5">
               <div className="google-btn-wrapper">
                 <button onClick={fnGoogle} className="google-btn btn btn-warning rounded-circle mx-5">
                   <FaGoogle />
@@ -88,11 +95,12 @@ const Login = () => {
               </div>
               <h5 className="mx-5 text-center">Sign-in with Google</h5>
             </Form.Text> 
-            <h5 className='text-danger'>{err}</h5>
-           <h5 className='text-success'>{result}</h5>
-          </Form>
+           
+          </Form> 
+          
         </Card.Body>
       </Card>
+     
     </Container>
     );
 };
