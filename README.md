@@ -5,7 +5,7 @@ Features:
 
 • After Clicking into the View Details button in Shop By Category sections card user will be redirect to the single toy details
 
-• In All Toys Route in navbar you will see the all toys by users 
+• In All Toys Route in navbar you will see the all toys added by users 
 
 • In My Toys Route in navbar you will see your added toys and also you can update and delete your existing toys
 
