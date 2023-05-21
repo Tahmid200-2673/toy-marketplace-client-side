@@ -7,7 +7,7 @@
 //     const { user } = useContext(AuthContext);
 //     const [toys, setToys] = useState([]);
 
-//      const url = `http://localhost:5000/toys?email=${user?.email}`;
+//      const url = `https://b7a11-toy-marketplace-server-side-one.vercel.app/toys?email=${user?.email}`;
 //     useEffect(() => {
 //         fetch(url)
 //             .then(res => res.json())
@@ -17,7 +17,7 @@
 //     const Delete = id => {
 //         const confirmation = confirm('Sure you want to delete');
 //         if (confirmation) {
-//             fetch(`http://localhost:5000/toys/${id}`, {
+//             fetch(`https://b7a11-toy-marketplace-server-side-one.vercel.app/toys/${id}`, {
 //                 method: 'DELETE'
 //             })
 //                 .then(res => res.json())
@@ -88,7 +88,7 @@
 //   const [sortOrder, setSortOrder] = useState('asc');
 
 //   useEffect(() => {
-//     const url = `http://localhost:5000/toys?email=${user?.email}&sortField=${sortField}&sortOrder=${sortOrder}`;
+//     const url = `https://b7a11-toy-marketplace-server-side-one.vercel.app/toys?email=${user?.email}&sortField=${sortField}&sortOrder=${sortOrder}`;
 
 //     fetch(url)
 //       .then((res) => res.json())
@@ -107,7 +107,7 @@
 //   const Delete = (id) => {
 //     const confirmation = window.confirm('Are you sure you want to delete?');
 //     if (confirmation) {
-//       fetch(`http://localhost:5000/toys/${id}`, {
+//       fetch(`https://b7a11-toy-marketplace-server-side-one.vercel.app/toys/${id}`, {
 //         method: 'DELETE',
 //       })
 //         .then((res) => res.json())
@@ -179,6 +179,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Link } from 'react-router-dom';
+import Rating from 'react-rating';
+import { FaRegStar, FaStar } from 'react-icons/fa';
 
 const MyToys = () => {
   const myImageStyle = { width: '5rem', height: '5rem' };
@@ -187,7 +189,7 @@ const MyToys = () => {
   const [sortOrder, setSortOrder] = useState('asc');
 
   useEffect(() => {
-    const url = `http://localhost:5000/toys?email=${user?.email}&sortOrder=${sortOrder}`;
+    const url = `https://b7a11-toy-marketplace-server-side-one.vercel.app/toys?email=${user?.email}&sortOrder=${sortOrder}`;
 
     fetch(url)
       .then((res) => res.json())
@@ -205,7 +207,7 @@ const MyToys = () => {
   const Delete = (id) => {
     const confirmation = window.confirm('Are you sure you want to delete?');
     if (confirmation) {
-      fetch(`http://localhost:5000/toys/${id}`, {
+      fetch(`https://b7a11-toy-marketplace-server-side-one.vercel.app/toys/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())
@@ -258,7 +260,7 @@ const MyToys = () => {
               <td>{toy.email}</td>
               <td>&nbsp;&nbsp;&nbsp;{toy.subcategory}</td>
               <td>&nbsp;&nbsp;&nbsp;{toy.price}</td>
-              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{toy.rating}</td>
+               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{toy.rating}</td> 
               <td>&nbsp;&nbsp;&nbsp;&nbsp;{toy.quantity}</td>
               <td>&nbsp;&nbsp;&nbsp;{toy.description}</td>
               <td>

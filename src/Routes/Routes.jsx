@@ -9,6 +9,8 @@ import AllToys from "../pages/AllToys/AllToys";
 import SingleToy from "../pages/SingleToy/SingleToy";
 import PrivateRoute from "./PrivateRoute";
 import UpdateToy from "../pages/UpdateToy/UpdateToy";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Blog from "../pages/Blog/Blog";
 
 
 const router = createBrowserRouter([
@@ -31,14 +33,14 @@ const router = createBrowserRouter([
         {
           path: 'toys/:id',
           element: <PrivateRoute><SingleToy></SingleToy></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+          loader: ({params}) => fetch(`https://b7a11-toy-marketplace-server-side-one.vercel.app/toys/${params.id}`)
 
          
         },
         {
           path: 'updatetoy/:id',
           element: <UpdateToy></UpdateToy>,
-          loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+          loader: ({params}) => fetch(`https://b7a11-toy-marketplace-server-side-one.vercel.app/toys/${params.id}`)
 
          
         },
@@ -53,9 +55,17 @@ const router = createBrowserRouter([
         {
           path: "alltoys",
           element: <AllToys></AllToys>
+        },
+        {
+          path: "blog",
+          element: <Blog></Blog>
         }
       ],
     },
+    {
+      path:'*',
+      element: <ErrorPage></ErrorPage>
+    }
     
   ]);
   export default router;

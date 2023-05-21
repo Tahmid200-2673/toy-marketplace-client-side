@@ -12,7 +12,7 @@
 //   const [toys, setToys] = useState([]);
 //   // const [activeCategory, setActiveCategory] = useState('Marvel');
 
-//   const url = `http://localhost:5000/toys?email=${user?.email}`;
+//   const url = `https://b7a11-toy-marketplace-server-side-one.vercel.app/toys?email=${user?.email}`;
 //   useEffect(() => {
 //     fetch(url)
 //       .then(res => res.json())
@@ -75,6 +75,8 @@ import 'react-tabs/style/react-tabs.css';
 import './Toys.css';
 import { Link } from 'react-router-dom';
 import './Toys.css';
+import Rating from 'react-rating';
+import { FaRegStar, FaStar } from 'react-icons/fa';
 
 const Toys = () => {
   const { user } = useContext(AuthContext);
@@ -82,16 +84,16 @@ const Toys = () => {
   const subCategories = ['Marvel', 'Star Wars', 'Transformers'];
 
   useEffect(() => {
-    if (user) {
-       const url = `http://localhost:5000/toys?email=${user.email}`;
-     
+    
+      //  const url = `https://b7a11-toy-marketplace-server-side-one.vercel.app/toys?email=${user.email}`;
+      const url = `https://b7a11-toy-marketplace-server-side-one.vercel.app/toys`;
       fetch(url)
         .then(res => res.json())
         .then(data => setToys(data))
         .catch(error => console.error('Error fetching toys:', error));
-    }
     
-  }, [user]);
+    
+  }, []);
 
   return (
     <div className='mt-5 text-center'>
@@ -116,6 +118,13 @@ const Toys = () => {
                         <h5 className="card-title">{toy.name}</h5>
                        <div className='toy-card'>
                        <p className="card-text price1">Price: ${toy.price}</p>
+                       <Rating
+                        placeholderRating={toy.rating}
+                        readonly
+                        emptySymbol={<FaRegStar></FaRegStar>}
+                        placeholderSymbol={<FaStar className='text-warning'></FaStar>}
+                        fullSymbol={<FaStar></FaStar>}
+                    ></Rating>
                         <p className="card-text rating1">Rating: {toy.rating}</p>
                        </div>
                         <Link to={`/toys/${toy._id}`}>

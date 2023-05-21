@@ -13,7 +13,7 @@ const AllToys = () => {
     const [currentPage, setCurrentPage] = useState(0); 
     const [itemsPerPage, setItemsPerPage] = useState(20);
 
-    //  const url = `http://localhost:5000/toys`;
+    //  const url = `https://b7a11-toy-marketplace-server-side-one.vercel.app/toys`;
     // useEffect(() => {
     //     fetch(url)
     //         .then(res => res.json())
@@ -22,7 +22,7 @@ const AllToys = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch(`http://localhost:5000/toys?page=${currentPage}&limit=${itemsPerPage}`);
+            const response = await fetch(`https://b7a11-toy-marketplace-server-side-one.vercel.app/toys?page=${currentPage}&limit=${itemsPerPage}`);
 
             const data = await response.json();
             setToys(data);

@@ -294,7 +294,7 @@ const NavBar = () => {
               </Nav.Link>
             </>
           )}
-          <Nav.Link as={NavLink} to="/blogs" activeClassName="active">
+          <Nav.Link as={NavLink} to="/blog" activeClassName="active">
             Blogs
           </Nav.Link>
         </Nav>
@@ -308,7 +308,7 @@ const NavBar = () => {
                   imageWidth="50"
                   imageHeight="50"
                   roundedSize="13"
-                  hoverColor="#FFFFFF"
+                  hoverColor="#A9A9A9"
                 />
               </a>
               <Tooltip anchorSelect="#my-anchor-element" content={user.displayName} />
