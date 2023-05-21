@@ -1,23 +1,4 @@
-// import React, { useContext, useState } from 'react';
-// import { Button } from 'react-bootstrap';
-// import { Form, useLoaderData } from 'react-router-dom';
-// import { AuthContext } from '../../Providers/AuthProvider';
 
-// const UpdateToy = () => {
-//      const toy= useLoaderData();
-//      const { name, pictureUrl, sellerName, email,subcategory, price, rating, quantity, description } = toy;
-
-
-//     const { user } = useContext(AuthContext);
-
-    
-//     return (
-//        <div>{name}</div>
-      
-//     );
-// };
-
-// export default UpdateToy;
 
 
 import React, { useContext, useState } from 'react';
