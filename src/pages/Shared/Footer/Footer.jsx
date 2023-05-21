@@ -39,7 +39,7 @@ const Footer = () => {
         </Row>
       </Container>
       <div className="text-center py-3">
-        &copy; {new Date().getFullYear()} Toys Paradise. All rights reserved.
+      &copy; {new Date().getFullYear()} Toys Paradise. All rights reserved.
       </div>
     </div>
     );
