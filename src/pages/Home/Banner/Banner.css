@@ -1,6 +1,8 @@
+
  #toy {
   position: relative;
   text-align: center;
+  
 }
 
 .description {
@@ -13,6 +15,7 @@
 
 .banner-image {
   width: 100%;
+  
 }
 
 .description .banner-text {
